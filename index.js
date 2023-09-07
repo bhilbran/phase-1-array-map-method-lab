@@ -11,6 +11,18 @@ const tutorials = [
   'what is JSONP?'
 ];
 
-const titleCased = () => {
-  return tutorials
+
+function titleCased() {
+  let titleCasedTutorials = [];
+
+  for (let tutorial of tutorials) {
+    let titleCaseName = tutorial
+      .split(" ")
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(" ");
+
+    titleCasedTutorials.push(titleCaseName);
+  }
+
+  return titleCasedTutorials;
 }
